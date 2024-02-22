@@ -7,16 +7,17 @@ const app = express();
 
 //import routes
 const inventoryRoutes = require('./routes/inventory.js');
+const cutomerCareRoutes = require('./routes/customer.js');
 
 //app middleware
 app.use(bodyParser.json());
 app.use(cors()); //use to connect backend and frontend
 
 //route middwware
-app.use("/inventory", inventoryRoutes);
+app.use("/customercare", cutomerCareRoutes);
 
 const PORT  = 8000;
-const DB_URL = 'mongodb+srv://eshaniechathurika:dummy@cluster0.njt6xy6.mongodb.net/?retryWrites=true&w=majority'
+const DB_URL = 'mongodb+srv://project1:project1@cluster0.b1cggpg.mongodb.net/Vidama'
 
 
 mongoose.connect(DB_URL)
