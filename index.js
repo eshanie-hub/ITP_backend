@@ -11,6 +11,7 @@ const cutomerCareRoutes = require('./routes/customer.js');
 const empDetailsRoutes = require('./routes/employee_adding.js');
 const paymentRoutes=require('./routes/payment.js');
 const orderRoutes = require('./routes/order_placement.js');
+const delieveryRoutes = require('./routes/delievery.js');
 
 //app middleware
 app.use(bodyParser.json());
@@ -22,6 +23,7 @@ app.use("/inventory", inventoryRoutes);
 app.use("/empDetails",empDetailsRoutes);
 app.use("/payment",paymentRoutes);
 app.use("/order_placement", orderRoutes);
+app.use("/delievery", delieveryRoutes);
 
 const PORT  = 8000;
 const DB_URL = 'mongodb+srv://project1:project1@cluster0.b1cggpg.mongodb.net/Vidama'
