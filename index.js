@@ -8,6 +8,12 @@ const app = express();
 //import routes
 const inventoryRoutes = require('./routes/inventory.js');
 const cutomerCareRoutes = require('./routes/customer.js');
+const empDetailsRoutes = require('./routes/employee_adding.js');
+const paymentRoutes=require('./routes/payment.js');
+const orderRoutes = require('./routes/order_placement.js');
+const delieveryRoutes = require('./routes/delievery.js');
+const salaryRoutes = require('./routes/employee_salary.js');
+
 
 //app middleware
 app.use(bodyParser.json());
@@ -15,6 +21,12 @@ app.use(cors()); //use to connect backend and frontend
 
 //route middwware
 app.use("/customercare", cutomerCareRoutes);
+app.use("/inventory", inventoryRoutes);
+app.use("/empDetails",empDetailsRoutes);
+app.use("/payment",paymentRoutes);
+app.use("/order_placement", orderRoutes);
+app.use("/delievery", delieveryRoutes);
+app.use("/salary", salaryRoutes);
 
 const PORT  = 8000;
 const DB_URL = 'mongodb+srv://project1:project1@cluster0.b1cggpg.mongodb.net/Vidama'
