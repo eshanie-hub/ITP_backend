@@ -11,6 +11,7 @@ router.route("/add").post((req, res) => {
     const size = req.body.size;
     const price = req.body.price;
     const stockCount = req.body.stockCount;
+    const reorderPoint = req.body.reorderPoint;
 
     const newInventory = new Inventory({
         itemNo,
@@ -18,7 +19,8 @@ router.route("/add").post((req, res) => {
         color,
         size,
         price,
-        stockCount
+        stockCount,
+        reorderPoint
     })
 
     newInventory.save().then(() =>{
@@ -48,7 +50,8 @@ router.route('/update/:id').put(async (req, res) => {
     color,
     size,
     price,
-    stockCount
+    stockCount,
+    reorderPoint
     } = req.body;
 
     const updateInventory = {
@@ -57,7 +60,8 @@ router.route('/update/:id').put(async (req, res) => {
         color,
         size,
         price,
-        stockCount
+        stockCount,
+        reorderPoint
     }
 
     const update = await Inventory.findByIdAndUpdate(id, updateInventory)
