@@ -16,7 +16,7 @@ const salaryRoutes = require('./routes/employee_salary.js');
 const distributorRouter = require('./routes/distributor.js');
 
 
-//app middleware
+//app middlewarennpm 
 app.use(bodyParser.json());
 app.use(cors()); //use to connect backend and frontend
 
